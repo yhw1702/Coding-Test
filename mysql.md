@@ -56,3 +56,61 @@ ORDER BY ANIMAL_ID;
 </pre>
 </details>
 
+<details>
+  <summary>2022-10-27</summary>
+<pre>
+
+![중복 제거](https://user-images.githubusercontent.com/105253684/198181100-70df53ab-ff85-4992-93b2-902ef3a94be3.png)
+
+* (DISTINCT NAME)으로 NAME에 있는 중복 값을 제거 후 COUNT합니다.
+
+```mysql 
+SELECT COUNT(DISTINCT NAME) COUNT FROM ANIMAL_INS;
+```
+---
+![동물 수 구하기](https://user-images.githubusercontent.com/105253684/198181625-c4f5c8d1-7bcb-41a5-ad59-73315fcc2cd5.png)
+
+* COUNT(*)로 ANIMAL_INS 테이블의 모든 로우를 COUNT합니다.
+
+```mysql 
+SELECT COUNT(*) COUNT FROM ANIMAL_INS;
+```
+---
+![최솟값 구하기](https://user-images.githubusercontent.com/105253684/198181841-eb6e51db-f48b-4dbf-8bc7-7ea486f83679.png)
+
+* MIN(DATETIME)으로 보호 시작일의 최솟값을 조회합니다.
+
+```mysql
+SELECT MIN(DATETIME) DATETIME FROM ANIMAL_INS;
+```
+---
+![이름에 el 들어가는 동물 찾기](https://user-images.githubusercontent.com/105253684/198182068-a5026641-7a32-497b-bd89-992d4b32cb4e.png)
+
+* LIKE '%el%' AND ANIMAL_TYPE = 'Dog'로 이름 사이에 EL이 들어가는 개를 조회 후 NAME 오름차순 정렬합니다.
+
+```mysql
+SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE NAME LIKE '%el%' AND ANIMAL_TYPE = 'Dog' ORDER BY NAME;
+```
+---
+![동명 동물 수 찾기](https://user-images.githubusercontent.com/105253684/198190899-43960d68-cac0-4e75-a501-3f974bc73015.png)
+
+* GROUP BY로 NAME끼리 묶은 후 HAVING으로 COUNT(NAME)이 두 개 이상인 것만 조회 후 NAME 오름차순 정렬합니다.
+
+```mysql
+SELECT NAME, COUNT(NAME) COUNT
+FROM ANIMAL_INS 
+GROUP BY NAME 
+HAVING COUNT(NAME) > 1 
+ORDER BY NAME;
+```
+</pre>
+</details>
+
+
+<details>
+  <summary>2022-10-28</summary>
+<pre>
+
+</pre>
+</details>
+
