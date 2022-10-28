@@ -113,10 +113,21 @@ ORDER BY NAME;
 
 ![NULL 처리하기](https://user-images.githubusercontent.com/105253684/198502250-5147a992-3094-496e-9d35-dd19ee2b60b7.png)
 
-* COALEASCE(컬럼이름, NULL 대체 할 값)을 사용하여 NULL값엔 No name을 넣어줍니다.
+* COALEASCE(컬럼명, NULL 대체 할 값)을 사용하여 NULL값엔 No name을 넣어줍니다.
 
 ```mysql
 SELECT ANIMAL_TYPE, COALESCE(NAME, 'No name') as NAME, SEX_UPON_INTAKE FROM ANIMAL_INS;
+```
+---
+![DATETIME에서 DATE로 형 변환](https://user-images.githubusercontent.com/105253684/198502235-d167ac8b-c690-4e84-8a35-7f53d512ecbd.png)
+
+* DATE_FORMAT을 활용해 DATETIME의 연-월-일 만 출력합니다.
+* ORDER BY ANIMAL_ID로 결과는 아이디 순으로 조회 합니다.
+
+```mysql
+SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d') 
+FROM ANIMAL_INS 
+ORDER BY ANIMAL_ID;
 ```
 ---
 
