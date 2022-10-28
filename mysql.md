@@ -130,7 +130,17 @@ FROM ANIMAL_INS
 ORDER BY ANIMAL_ID;
 ```
 ---
+![고양이와 개는 몇 마리 있을까](https://user-images.githubusercontent.com/105253684/198502257-2050b3d8-ea29-471c-8c78-49851861e0b3.png)
 
+* COUNT(ANIMAL_TYPE)으로 GROUP BY로 묶어둔 개와 고양이가 각각 몇 마리인지 조회합니다.
+* 고양이를 개보다 먼저 조회하기 위해(CAT, DOG) ANIMAL_TYPE의 오름차순으로 정렬합니다.
+```mysql
+SELECT ANIMAL_TYPE, COUNT(ANIMAL_TYPE) 
+FROM ANIMAL_INS 
+GROUP BY ANIMAL_TYPE 
+ORDER BY ANIMAL_TYPE;
+```
+---
 </pre>
 </details>
 
