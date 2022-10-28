@@ -141,6 +141,18 @@ GROUP BY ANIMAL_TYPE
 ORDER BY ANIMAL_TYPE;
 ```
 ---
+![중성화 여부 파악하기](https://user-images.githubusercontent.com/105253684/198502288-c0fee014-4e80-4b9e-a90c-c26ebe0450be.png)
+
+* 중성화된 동물은 SEX_UPON_INTAKE컬럼에 Neutered 또는 Spayed라는 단어가 들어갑니다.
+* IF문을 사용해 성별 및 중성화 여부에 Neutered, Spayed가 들어간다면 O 그렇지 않다면 X를 출력합니다.
+* 아이디 순으로 조회합니다. 
+```mysql
+SELECT ANIMAL_ID, NAME, 
+IF((SEX_UPON_INTAKE LIKE "Neutered%") OR (SEX_UPON_INTAKE LIKE "Spayed%"), "O", "X") "중성화" 
+FROM ANIMAL_INS 
+ORDER BY ANIMAL_ID;
+```
+---
 </pre>
 </details>
 
