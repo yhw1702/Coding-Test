@@ -153,6 +153,20 @@ FROM ANIMAL_INS
 ORDER BY ANIMAL_ID;
 ```
 ---
+![입양 시각 구하기(1)](https://user-images.githubusercontent.com/105253684/198502261-b9a832f4-2e1b-4bf3-a30b-c892db44121c.png)
+
+* HOUR(DATETIME)으로 DATETIME의 시간만 뽑은 후 GROUP BY로 묶어줍니다.
+* GROUP BY로 묶은 시간에 해당하는 로우를 COUNT합니다.
+* GROUP BY로 묶은 시간에 조건을 주기 위해 HAVING을 사용하여 9시부터 20시 전 까지의 기록들만 출력합니다.
+* 결과는 시간대 순으로 정렬합니다. (ORDER BY HOUR)
+```mysql
+SELECT HOUR(DATETIME) HOUR, COUNT(DATETIME) COUNT
+FROM ANIMAL_OUTS
+GROUP BY HOUR(DATETIME)
+HAVING HOUR >= 9 and HOUR < 20
+ORDER BY HOUR
+```
+
 </pre>
 </details>
 
