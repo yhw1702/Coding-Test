@@ -111,6 +111,23 @@ ORDER BY NAME;
   <summary>2022-10-28</summary>
 <pre>
 
+![NULL 처리하기](https://user-images.githubusercontent.com/105253684/198502250-5147a992-3094-496e-9d35-dd19ee2b60b7.png)
+
+* COALEASCE(컬럼이름, NULL 대체 할 값)을 사용하여 NULL값엔 No name을 넣어줍니다.
+
+```mysql
+SELECT ANIMAL_TYPE, COALESCE(NAME, 'No name') as NAME, SEX_UPON_INTAKE FROM ANIMAL_INS;
+```
+---
+
+</pre>
+</details>
+
+
+<details>
+  <summary>2022-10-29</summary>
+<pre>
+
 </pre>
 </details>
 
