@@ -225,6 +225,21 @@ SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE FROM ANIMAL_INS
 WHERE NAME IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty');
 ```
 ---
+![카테고리 별 상품 개수 구하기](https://user-images.githubusercontent.com/105253684/198915432-3c6c28df-c30f-4019-ae4a-6462ac0848cb.png)
+
+* SUBSTR(컬럼명, 시작 위치값, 가져올 길이값 )을 사용하여
+ RODUCT_CODE의 첫 번째 문자부터 2개의 문자를 뽑아 낸 후 CATEGORY로 지정합니다.
+* GROUP BY CATEGORY로 카테고리별로 묶어줍니다.
+* COUNT(PRODUCT_ID)로 GROUP BY로 묶인 로우를 COUNT해줍니다.
+* CATEGORY 오름차순으로 정렬합니다.
+
+```mysql
+SELECT SUBSTR(PRODUCT_CODE, 1, 2) CATEGORY, COUNT(PRODUCT_ID) PRODUCTS
+FROM PRODUCT 
+GROUP BY CATEGORY
+ORDER BY CATEGORY;
+```
+
 </pre>
 </details>
 
