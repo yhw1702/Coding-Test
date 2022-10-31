@@ -191,7 +191,21 @@ ORDER BY A.DATETIME
 LIMIT 3;
 ```
 ---
+![오랜 기간 보호한 동물(2)](https://user-images.githubusercontent.com/105253684/198912384-0d0af134-c213-4c9f-8fbe-3f315d1489a2.png)
 
+* ANIMAL_OUTS 테이블의 ANIMAL_ID는 ANIMAL_INS의 ANIMAL_ID의 외래 키입니다.
+* ANIMAL_INS와 ANIMAL_OUTS를 ANIMAL_ID를 기준으로 INNER JOIN 해줍니다.
+* ANIMAL_INS의 보호 시작일에서 ANIMAL_OUTS의 입양일을 빼면 보호 기간입니다.
+* 보호 기간을 기준으로 오름차순 정렬 후 상위 2개 로우를 출력합니다.
+
+```mysql
+SELECT O.ANIMAL_ID, O.NAME FROM ANIMAL_OUTS O
+INNER JOIN ANIMAL_INS I
+ON I.ANIMAL_ID = O.ANIMAL_ID
+ORDER BY I.DATETIME-O.DATETIME
+LIMIT 2;
+```
+---
 </pre>
 </details>
 
