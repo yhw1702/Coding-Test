@@ -216,6 +216,15 @@ SELECT * FROM FOOD_PRODUCT
 WHERE PRICE = (SELECT MAX(PRICE) FROM FOOD_PRODUCT)
 ```
 ---
+![루시와 엘라 찾기](https://user-images.githubusercontent.com/105253684/198912387-370cee1a-c034-49ac-bf23-b6b81ce4635c.png)
+
+* IN절을 사용해 NAME이 Lucy, Ella, Pickle, Rogan, Sabrina, Mitty인 동물의 로우를 모두 출력합니다.
+
+```mysql
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE FROM ANIMAL_INS
+WHERE NAME IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty');
+```
+---
 </pre>
 </details>
 
