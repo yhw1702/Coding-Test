@@ -206,6 +206,16 @@ ORDER BY I.DATETIME-O.DATETIME
 LIMIT 2;
 ```
 ---
+![가격이 제일 비싼 식품의 정보 출력하기](https://user-images.githubusercontent.com/105253684/198912386-7bba9737-758e-4178-bacb-c9f926c68b8b.png)
+
+* FOOD_PRODUCT의 가장 비싼 식품 가격을 서브쿼리로 찾아줍니다.(SELECT MAX(PRICE) FROM FOOD_PRODUCT)
+* 가장 비싼 식품 가격을 가진 로우를 출력합니다.
+
+```mysql
+SELECT * FROM FOOD_PRODUCT
+WHERE PRICE = (SELECT MAX(PRICE) FROM FOOD_PRODUCT)
+```
+---
 </pre>
 </details>
 
