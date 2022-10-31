@@ -172,7 +172,32 @@ ORDER BY HOUR
 
 
 <details>
-  <summary>2022-10-29</summary>
+  <summary>2022-10-31</summary>
+<pre>
+
+![오랜 기간 보호한 동물(1)](https://user-images.githubusercontent.com/105253684/198912380-4d6c0f7f-175e-4792-8d02-5686a1ec8939.png)
+
+* ANIMAL_INS를 기준으로 ANIMAL_OUTS를 LEFT JOIN 해줍니다.
+* 그 중 ANIMAL_OUTS의 입양일이 NULL인 로우만 뽑아 아직 입양을 못 간 동물만 뽑습니다.
+* ANIMAL_INS의 보호시작일을 기준으로 오름차순 정렬 후 상위 3개의 로우(LIMIT 3)만 출력합니다.
+
+```mysql
+SELECT A.NAME,A.DATETIME
+FROM ANIMAL_INS A
+LEFT JOIN ANIMAL_OUTS B
+ON A.ANIMAL_ID=B.ANIMAL_ID
+WHERE B.DATETIME IS NULL
+ORDER BY A.DATETIME
+LIMIT 3;
+```
+---
+
+</pre>
+</details>
+
+
+<details>
+  <summary>2022-11-01</summary>
 <pre>
 
 </pre>
