@@ -313,6 +313,18 @@ GROUP BY INGREDIENT_TYPE
 ORDER BY TOTAL_ORDER
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/199142592-886addd6-a6f0-4481-a768-122a0cc6776d.png)
+
+* 먼저 조건식에서 서브쿼리로 음식 종류 별 즐겨찾기가 가장 많은 식당의 음식 종류와 즐겨찾기수를 구해줍니다.
+* IN절을 사용해 서브쿼리 내용에 해당하는 데이터가 들어간 식당의 음식 종류, ID, 식당 이름, 즐겨찾기수를 조회합니다.
+* 음식 종류를 기준으로 내림차순 정렬해줍니다.
+
+```mysql
+SELECT FOOD_TYPE, REST_ID, REST_NAME, FAVORITES FROM REST_INFO
+WHERE (FOOD_TYPE, FAVORITES)
+IN (SELECT FOOD_TYPE, MAX(FAVORITES) FROM REST_INFO GROUP BY FOOD_TYPE)
+ORDER BY FOOD_TYPE DESC;
+```
 
 </pre>
 </details>
