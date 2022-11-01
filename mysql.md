@@ -218,7 +218,7 @@ WHERE PRICE = (SELECT MAX(PRICE) FROM FOOD_PRODUCT)
 ---
 ![루시와 엘라 찾기](https://user-images.githubusercontent.com/105253684/198912387-370cee1a-c034-49ac-bf23-b6b81ce4635c.png)
 
-* IN절을 사용해 NAME이 Lucy, Ella, Pickle, Rogan, Sabrina, Mitty인 동물의 로우를 모두 출력합니다.
+* IN절을 사용해 NAME이 Lucy, Ella, Pickle, Rogan, Sabrina, Mitty인 동물의 로우만 출력합니다.
 
 ```mysql
 SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE FROM ANIMAL_INS
@@ -248,6 +248,47 @@ ORDER BY CATEGORY;
   <summary>2022-11-01</summary>
 <pre>
 
+![image](https://user-images.githubusercontent.com/105253684/199138973-9e695022-acb8-4b7c-a7bb-169027adcf16.png)
+
+* PRODUCT테이블과 OFFLINE_SALE테이블을 PRODUCT_ID로 INNER JOIN 해줍니다.
+* PRODUCT_CODE끼리 GROUP BY로 묶어줍니다.
+* SUM(판매가 * 판매량)으로 상품코드 별 매출액 합계를 구합니다.
+* 매출액(SALES)를 기준으로 내림차순 후 같다면 상품코드 기준 오름차순 정렬해줍니다.
+
+```mysql
+SELECT P.PRODUCT_CODE, SUM(P.PRICE*O.SALES_AMOUNT) SALES 
+FROM PRODUCT P
+INNER JOIN OFFLINE_SALE O
+ON P.PRODUCT_ID = O.PRODUCT_ID
+GROUP BY P.PRODUCT_CODE
+ORDER BY SALES DESC, P.PRODUCT_CODE;
+```
+---
+![image](https://user-images.githubusercontent.com/105253684/199139855-166b66e2-3af4-4ffa-b1d4-899201b35bdd.png)
+
+* GROUP BY로 진료과 코드 별로 묶어줍니다.
+* COUNT(진료예약일시)로 월별예약건수를 구해준 후 5월예약건수라는 별칭을 붙입니다.
+* LIKE '2022-05%'를 사용해 월별예약건수 중 2022년 5월에 해당하는 데이터를 뽑아줍니다.
+* 5월예약건수를 기준 오름차순 정렬 후 같다면, 진료과 코드 기준 오름차순 정렬합니다.
+
+```mysql
+SELECT MCDP_CD 진료과코드, COUNT(APNT_YMD) 5월예약건수 
+FROM APPOINTMENT
+WHERE APNT_YMD LIKE '2022-05%'
+GROUP BY MCDP_CD
+ORDER BY 5월예약건수, MCDP_CD
+```
+---
+
 </pre>
 </details>
 
+
+<details>
+  <summary>2022-11-02</summary>
+<pre>
+
+
+
+</pre>
+</details>
