@@ -279,6 +279,24 @@ GROUP BY MCDP_CD
 ORDER BY 5월예약건수, MCDP_CD
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/199140969-91edd614-fd8b-43ae-a79a-62e11cdcdb58.png)
+
+* DATE_OF_BIRTH 컬럼이 출력하면 DATETIME형식이기 때문에 DATE_FORMAT(DATE_OF_BIRTH, '%Y-%m-%d')으로 'YYYY-mm-dd'형식으로 바꿔줍니다.
+* 생일이 3월인 데이터를 뽑기위해 MONTH(DATE_OF_BIRTH) = 3 으로 생일의 월만 뽑아 3인 데이터를 뽑아줍니다.
+* 여성회원은 GENDER가 'W'입니다. 조건식에 AND로 추가해줍니다.
+* 전화번호가 NULL인경우를 제외하기 위해 TLNO IS NOT NULL을 추가합니다.
+* MEMBER_ID를 기준 오름차순 정렬합니다.
+
+
+```mysql
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(DATE_OF_BIRTH, '%Y-%m-%d') DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE MONTH(DATE_OF_BIRTH) = 3 
+AND GENDER = 'W'
+AND TLNO IS NOT NULL
+ORDER BY MEMBER_ID;
+```
+---
 
 </pre>
 </details>
