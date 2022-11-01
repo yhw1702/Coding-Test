@@ -297,6 +297,22 @@ AND TLNO IS NOT NULL
 ORDER BY MEMBER_ID;
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/199141802-f16cc9ac-7ff5-4cf1-940a-6e35eb4a14e4.png)
+
+* ICECREAM_INFO테이블과 FIRST_HALF테이블을 아이스크림 맛으로 INNER JOIN 해줍니다.
+* GROUP BY로 INGREDIENT_TYPE별로 묶어줍니다.
+* SUM(TOTAL_ORDER)로 아이스크림 총주문량을 성분 타입별로 더해준 후 TOTAL_ORDER라는 별칭을 붙여줍니다.
+* TOTAL_ORDER를 기준 오름차순 정렬하면 총주문량이 작은 순서대로 조회할 수 있습니다.
+
+```mysql
+SELECT I.INGREDIENT_TYPE, SUM(TOTAL_ORDER) TOTAL_ORDER  
+FROM ICECREAM_INFO I
+INNER JOIN FIRST_HALF F
+ON I.FLAVOR = F.FLAVOR
+GROUP BY INGREDIENT_TYPE
+ORDER BY TOTAL_ORDER
+```
+---
 
 </pre>
 </details>
