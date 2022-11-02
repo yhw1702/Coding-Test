@@ -334,7 +334,19 @@ ORDER BY FOOD_TYPE DESC;
   <summary>2022-11-02</summary>
 <pre>
 
+![image](https://user-images.githubusercontent.com/105253684/199369525-7679692b-fc3e-4a3f-bccf-b7067638759f.png)
 
+* DATE_FORMAT을 활용해 DATETIME형식으로 출력되는 OUT_DATE를 '%Y-%m-%d'형식으로 바꾸고, 별칭을 붙여줍니다.
+* 2중 IF문을 활용해 OUT_DATE가 2022-05-01이하라면 '출고완료', 나머지 데이터 중 OUT_DATE가 NULL이면, '출고미정'
+* NULL이 아니면 '출고대기'를 OUT_DATE에 넣어줍니다.
+* ORDER_ID를 기준 오름차순 정렬해줍니다.
 
+```mysql
+SELECT ORDER_ID, PRODUCT_ID, DATE_FORMAT(OUT_DATE, '%Y-%m-%d') OUT_DATE, 
+IF(OUT_DATE <= '2022-05-01', '출고완료', IF(OUT_DATE IS NULL, '출고미정', '출고대기')) 출고여부
+FROM FOOD_ORDER
+ORDER BY ORDER_ID;
+```
+---
 </pre>
 </details>
