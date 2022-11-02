@@ -348,5 +348,18 @@ FROM FOOD_ORDER
 ORDER BY ORDER_ID;
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/199370578-d03ed1ea-1fdc-4826-a2cc-b80f3cc52f2d.png)
+
+* TRUNCATE(숫자, 버림 할 자리수)을 활용해 PRICE의 1000의 자리부터 버려줍니다.
+* PRICE_GROUP 별칭을 지정해주고 GROUP BY로 묶어줍니다.
+* COUNT(*)로 묶인 PRICE_GROUP별로 COUNT 해줍니다.
+
+```mysql
+SELECT TRUNCATE(PRICE, -4) PRICE_GROUP, COUNT(*) PRODUCTS
+FROM PRODUCT
+GROUP BY PRICE_GROUP
+ORDER BY PRICE_GROUP
+```
+---
 </pre>
 </details>
