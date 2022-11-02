@@ -361,5 +361,20 @@ GROUP BY PRICE_GROUP
 ORDER BY PRICE_GROUP
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/199371654-1a1b9f66-d209-4152-a067-b28a4177cd81.png)
+
+* GROUP BY로 회원ID와 상품 ID를 기준으로 묶어줍니다.
+* GROUP BY로 묶여있으므로 HAVING을 활용해 COUNT(*)이 2이상인 데이터만 출력합니다.
+* (동일한 상품을 동일한 회원이 재구매 )
+* USER_ID를 기준 오름차순, PRODUCT_ID를 기준 내림차순 정렬합니다.
+
+```mysql
+SELECT USER_ID, PRODUCT_ID FROM ONLINE_SALE
+GROUP BY USER_ID, PRODUCT_ID
+HAVING COUNT(*) >= 2
+ORDER BY USER_ID, PRODUCT_ID DESC
+```
+---
+
 </pre>
 </details>
