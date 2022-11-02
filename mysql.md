@@ -395,5 +395,19 @@ GROUP BY PRODUCT_ID
 ORDER BY TOTAL_SALES DESC, PRODUCT_ID
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/199375426-4ba53fd6-bf88-40d7-8f20-c1706ec5950e.png)
+
+* GROUP BY로 CART_ID별로 묶어줍니다.
+* NAME에 'Milk'또는 'Yogurt'가 들어간 데이터만 출력합니다.
+* HAVING COUNT(DISTINCT NAME) = 2로 중복을 제거한 NAME을 COUNT했을 때 2인 데이터
+* (MILK와 YOGURT가 둘 다 있는 데이터)만 출력합니다.
+
+```mysql
+SELECT CART_ID
+FROM CART_PRODUCTS
+WHERE NAME IN ('Milk','Yogurt')
+GROUP BY CART_ID
+HAVING COUNT(DISTINCT NAME) = 2
+```
 </pre>
 </details>
