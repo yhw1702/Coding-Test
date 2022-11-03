@@ -472,6 +472,23 @@ WHERE GENDER IS NOT NULL
 GROUP BY YEAR, MONTH, GENDER
 ORDER BY YEAR, MONTH, GENDER
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/199633958-baf6c166-1fe1-487a-8d7f-ac4ccd344c4a.png)
+
+* FIRST_HALF테이블과 JULY테이블을 FLAVOR로 INNER JOIN 해줍니다.
+* GROUP BY로 FLAVOR 별로 묶어줍니다.
+* ORDER BY로 7월 아이스크림 총 주문량과 상반기의 아이스크림 총 주문량을 더한 값에 내림차순으로 정렬합니다.( SUM(F.TOTAL_ORDER+J.TOTAL_ORDER) DESC )
+* 내림차순으로 정렬했기 때문에 상위 3개의 로우를 뽑으면(LIMIT 3) 총 주문량을 더한 값이 큰 상위 3개의 맛을 조회 할 수 있습니다.
+
+```mysql
+SELECT F.FLAVOR FROM FIRST_HALF F
+INNER JOIN JULY J
+ON F.FLAVOR = J.FLAVOR
+GROUP BY FLAVOR
+ORDER BY SUM(F.TOTAL_ORDER+J.TOTAL_ORDER) DESC
+LIMIT 3
+```
+---
 
 </pre>
 </details>
