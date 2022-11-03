@@ -431,6 +431,27 @@ WHERE PRICE IN(SELECT MAX(PRICE) FROM FOOD_PRODUCT
                AND CATEGORY IN('과자','국','김치','식용유')
 ORDER BY MAX_PRICE DESC
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/199630763-c0082e1e-6096-4749-8bef-f80578e2a7bd.png)
+
+* REST_INFO테이블과 REST_REVIEW테이블을 REST_ID로 INNER JOIN해줍니다.
+* GROUP BY로 REST_ID별로 묶어줍니다.
+* ROUND(AVG(REVIEW_SCORE), 2)는 REST_ID별로 묶인 REVIEW_SCORE의 평균을 구한 후 소수점 두 번째 자리까지 구합니다. 그리고, SCORE 별칭을 붙여줍니다. 
+* HAVING으로 ADDRESS 앞에 서울이 들어가는 데이터만 뽑습니다.
+* SCORE 기준 내림차순 정렬 후 평균점수가 같다면 FAVORITES 기준 내림차순 정렬합니다.
+
+
+```mysql
+SELECT R.REST_ID, I.REST_NAME, I.FOOD_TYPE, I.FAVORITES, I.ADDRESS, 
+ROUND(AVG(REVIEW_SCORE),2) SCORE
+FROM REST_REVIEW R
+INNER JOIN REST_INFO I
+ON I.REST_ID = R.REST_ID
+GROUP BY REST_ID
+HAVING I.ADDRESS LIKE '서울%'
+ORDER BY SCORE DESC, I.FAVORITES DESC
+```
+---
 
 </pre>
 </details>
