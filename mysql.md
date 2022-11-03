@@ -411,3 +411,26 @@ HAVING COUNT(DISTINCT NAME) = 2
 ```
 </pre>
 </details>
+
+
+<details>
+  <summary>2022-11-03</summary>
+<pre>
+
+![image](https://user-images.githubusercontent.com/105253684/199629830-d336cda1-d9ca-41a6-a9c0-4a99d5b119f9.png)
+
+* 서브쿼리로 과자, 국, 김치, 식용유의 MAX(PRICE)를 IN을 사용해 카테고리별로 구해줍니다.
+* 해당하는 카테고리별 MAX(PRICE)가 포함된 FOOD_PRODUCT테이블의 데이터를 출력합니다.
+* PRICE에 MAX_PRICE별칭을 붙여준 후 내림차순 정렬해줍니다.
+
+```mysql
+SELECT CATEGORY, PRICE MAX_PRICE, PRODUCT_NAME
+FROM FOOD_PRODUCT
+WHERE PRICE IN(SELECT MAX(PRICE) FROM FOOD_PRODUCT 
+               GROUP BY CATEGORY)
+               AND CATEGORY IN('과자','국','김치','식용유')
+ORDER BY MAX_PRICE DESC
+```
+
+</pre>
+</details>
