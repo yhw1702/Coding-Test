@@ -452,6 +452,26 @@ HAVING I.ADDRESS LIKE '서울%'
 ORDER BY SCORE DESC, I.FAVORITES DESC
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/199633303-e4caa55c-dd74-4e8a-9d5e-1ab1bf887834.png)
+
+* USER_INFO테이블과 ONLINE_SALE테이블을 USER_ID로 INNER JOIN 해줍니다.
+* YEAR(SALES_DATE)로 연도만 뽑아 YEAR라는 별칭을 붙여줍니다.
+* MONTH(SALES_DATE)로 월만 뽑아 MONTH를 붙여줍니다.
+* GROUP BY로 YEAR, MONTH, GENDER 별로 묶어줍니다.
+* COUNT(DISTINCT USER_ID)로 년, 월, 성별 별로 묶인 USER_ID를 중복없이(DISTINCT) COUNT해줍니다.
+* 성별정보가 없는 경우 결과에서 제외하기 위해 조건문 WHERE GENDER IS NOT NULL을 붙여줍니다.(GENDER에 NULL값이 있을 경우 제외)
+* 년, 월, 일 별 오름차순 정렬해줍니다.
+
+```mysql
+SELECT YEAR(SALES_DATE) YEAR, MONTH(SALES_DATE) MONTH,
+       GENDER, COUNT(DISTINCT U.USER_ID) USERS
+FROM USER_INFO U
+INNER JOIN ONLINE_SALE O
+ON O.USER_ID = U.USER_ID
+WHERE GENDER IS NOT NULL
+GROUP BY YEAR, MONTH, GENDER
+ORDER BY YEAR, MONTH, GENDER
+```
 
 </pre>
 </details>
