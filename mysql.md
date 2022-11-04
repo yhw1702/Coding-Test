@@ -492,3 +492,34 @@ LIMIT 3
 
 </pre>
 </details>
+
+
+<details>
+  <summary>2022-11-04</summary>
+<pre>
+
+![image](https://user-images.githubusercontent.com/105253684/199898020-7266f793-7e49-4fc7-8845-4e31afcdbc8e.png)
+
+* APPOINTMENT테이블과 DOCTOR테이블을 의사ID로 INNER JOIN합니다.
+* PATIENT테이블은 환자 번호로 INNER JOIN해줍니다.
+* 조건문으로 진료 예약일시가 2022-04-13인 데이터를 뽑습니다.
+* 그리고 예약취소여부가 'N'인 데이터를 뽑아 취소되지 않은 예약 내역을 뽑습니다.
+* 진료과코드가 'CS'인 데이터를 뽑습니다.
+* 진료예약일시 기준 오름차순 정렬해줍니다.
+
+```mysql
+SELECT A.APNT_NO, P.PT_NAME, P.PT_NO, A.MCDP_CD, D.DR_NAME, A.APNT_YMD
+FROM APPOINTMENT A
+INNER JOIN DOCTOR D
+ON A.MDDR_ID = D.DR_ID
+INNER JOIN PATIENT P
+ON A.PT_NO = P.PT_NO
+WHERE DATE_FORMAT(APNT_YMD, '%Y-%m-%d') = '2022-04-13'
+AND A.APNT_CNCL_YN = 'N'
+AND A.MCDP_CD = 'CS'
+ORDER BY A.APNT_YMD
+```
+---
+
+</pre>
+</details>
