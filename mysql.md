@@ -520,6 +520,25 @@ AND A.MCDP_CD = 'CS'
 ORDER BY A.APNT_YMD
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/199898858-245a907e-74bc-4b3c-aefa-fedc4b562736.png)
+
+* 온라인과 오프라인 데이터를 모두 출력하려면 FULL OUTER JOIN을 해주어야 합니다.
+* MYSQL은 FULL OUTER JOIN을 지원하지 않기 때문에 UNION ALL을 사용해 두 테이블의 모든 로우를 출력합니다.
+* OFFLINE_SALE테이블의 USER_ID값은 NULL로 표시해주어야 하기 때문에 USER_ID자리는 NULL로 표기하고 USER_ID별칭을 붙여줍니다.
+* 2022년 3월의 데이터만 출력해야 하기 때문에 DATE_FORMAT으로 '%Y-%m-%d'형식으로 고쳐준 후
+* BETWEEN을 사용해 '2022-03-01'과 '2022-03-31'사이에 포함되는 데이터만 출력합니다.
+* SALES_DATE기준 오름차순 정렬하고 같다면 PRODUCT_ID 상품ID까지 같다면 USER_ID를 기준 오름차순 정렬 해줍니다.
+
+```mysql
+SELECT DATE_FORMAT(SALES_DATE, '%Y-%m-%d') SALES_DATE, PRODUCT_ID, USER_ID, SALES_AMOUNT
+FROM ONLINE_SALE
+WHERE SALES_DATE BETWEEN '2022-03-00' AND '2022-03-31'
+UNION ALL
+SELECT DATE_FORMAT(SALES_DATE, '%Y-%m-%d') SALES_DATE, PRODUCT_ID, NULL USER_ID, SALES_AMOUNT
+FROM OFFLINE_SALE
+WHERE SALES_DATE BETWEEN '2022-03-00' AND '2022-03-31'
+ORDER BY SALES_DATE, PRODUCT_ID, USER_ID
+```
 
 </pre>
 </details>
