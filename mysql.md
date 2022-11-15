@@ -545,7 +545,7 @@ ORDER BY SALES_DATE, PRODUCT_ID, USER_ID
 * 0시부터 23시까지의 데이터를 출력해야하지만 해당 데이터는 7시부터 데이터가 존재합니다.
 * SET @변수명 = 대입값; 을 활용해 @HOUR변수를 지정해 -1값을 줍니다.
 * 반복문을 사용해 @HOUR값이 22가 될 때까지 +1을 해줘서 0~23까지의 값을 넣어주고 HOUR라는 별칭을 줍니다.
-* 서브쿼리문으로 ANIMAL_OUTS 테이블에 있는 DATETIME 변수와 @HOUR 변수가 동일한 순간 카운트를 진행한다.
+* 서브쿼리문으로 ANIMAL_OUTS 테이블에 있는 DATETIME 변수와 @HOUR 변수가 동일한 순간 카운트합니다.
 
 ```mysql
 SET @HOUR = -1;
