@@ -20,7 +20,23 @@
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/202631851-fe58d63a-be64-4ceb-9e5e-85214478ae15.png)
 
+* for 반복문을 array.length만큼 돌려 height이 array[i]보다 큰 경우에 answer값을 1씩 더해줍니다.
+
+```java
+class Solution {
+    public int solution(int[] array, int height) {
+        int answer = 0;
+        for(int i = 0; i < array.length; i++){
+            if(array[i] > height){
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
