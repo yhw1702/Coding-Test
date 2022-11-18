@@ -37,6 +37,20 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/202632281-a400a6a4-347b-47d4-a165-1657e5a42ab5.png)
+
+* num1을 num2로 나눈 후 1000을 곱해 double타입으로 형변환하여 answer에 담아줍니다.
+* answer를 int로 형변환하여 리턴해줍니다.(정수부분을 return하기 위해)
+
+```java
+class Solution {
+    public int solution(int num1, int num2) {
+        double answer = (double)num1/num2 * 1000;
+        return (int)answer;
+    }
+}
+```
 
 </pre>
 </details>
