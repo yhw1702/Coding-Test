@@ -77,6 +77,22 @@ class Solution {
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/202953526-6c25fd68-963f-4b95-a417-de1b00f5252a.png)
+
+* answer배열을 num_list배열의 길이만큼 선언해줍니다.
+* 반복문을 돌려 num_list의 끝부터 answer배열에 차례로 넣어줍니다.
+
+```java
+class Solution {
+    public int[] solution(int[] num_list) {
+        int[] answer = new int[num_list.length];
+        for(int i = num_list.length-1, j = 0 ; i >= 0  ; i--, j++){
+            answer[j] = num_list[i];
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
