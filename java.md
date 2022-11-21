@@ -60,5 +60,32 @@ class Solution {
   <summary> 0 Lv (2)</summary>
 <pre>
 
+![image](https://user-images.githubusercontent.com/105253684/202952715-ffd7e465-8dfa-4a29-bdd9-5690aa386cee.png)
+
+* answer배열을 numbers배열의 길이만큼 선언해줍니다.
+* for 반복문을 돌려 answer에 numbers배열 두배값을 반복해서 넣어줍니다. 
+
+```java
+class Solution {
+    public int[] solution(int[] numbers) {
+        int[] answer = new int[numbers.length];
+        for(int i = 0 ; i < numbers.length ; i++){
+            answer[i] = numbers[i] * 2;
+        }
+        return answer;
+    }
+}
+```
+---
+
+</pre>
+</details>
+
+
+<details>
+  <summary> 0 Lv (3)</summary>
+<pre>
+
+
 </pre>
 </details>
