@@ -153,6 +153,25 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/202960023-aecb5176-c083-4b62-bc01-edf39f7bfe9f.png)
+
+* 반복문으로 my_string을 하나씩 char c에 넣어줍니다.
+* answer에 String으로 형변환한 c를 repeat(n)으로 n번 반복하여 넣어줍니다.
+
+```java
+class Solution {
+    public String solution(String my_string, int n) {
+        String answer = "";
+        for (int i = 0; i < my_string.length(); i++){
+            char c = my_string.charAt(i);
+            answer += String.valueOf(c).repeat(n);
+        }
+        return answer;
+    }
+}
+```
+---
 
 </pre>
 </details>
