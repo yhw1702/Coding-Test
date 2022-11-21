@@ -112,7 +112,7 @@ class Solution {
 ---
 ![image](https://user-images.githubusercontent.com/105253684/202954702-820d3caf-8a1f-45d5-a20d-5a30b1cbce18.png)
 
-* String타입 x 변수를 선언해줍니다.
+* String타입 x 변수를 선언, 초기화 해줍니다.
 * 반복문을 n번 돌려서 x에 *을 하나씩 추가하고 x를 출력합니다.
 
 ```java
@@ -127,6 +127,29 @@ public class Solution {
             x += "*";
             System.out.println(x);
         }
+    }
+}
+```
+---
+![image](https://user-images.githubusercontent.com/105253684/202955166-94848ddb-a074-48a0-becc-baa2a2fd4963.png)
+
+* 짝수와 홀수의 갯수를 담을 cnt1, cnt2 변수를 선언해줍니다.
+* 반복문을 돌려 num_list[i]가 짝수일 경우(2로 나눈 나머지가 0) cnt1 1씩 증가,
+홀수일 경우(else) cnt2 2씩 증가하여 answer배열에 넣어줍니다.
+
+```java
+class Solution {
+    public int[] solution(int[] num_list) {
+        int[] answer = new int[2];
+        int cnt1 = 0;
+        int cnt2 = 0;
+        for(int i = 0; i < num_list.length; i++){
+            if(num_list[i] % 2 == 0) cnt1 += 1;
+            else cnt2 += 1;
+        }
+        answer[0] = cnt1;
+        answer[1] = cnt2;
+        return answer;
     }
 }
 ```
