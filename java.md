@@ -93,7 +93,23 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/202954062-d31a396c-ee7a-45fc-bf35-4ce17a68664b.png)
 
+* String타입 변경을 위해 StringBuffer sb를 생성해줍니다.
+* sb.reverse()를 사용해 문자열을 뒤집고 toString으로 변환해 answer에 넣어줍니다.
+
+```java
+class Solution {
+    public String solution(String my_string) {
+        String answer = "";
+        StringBuffer sb = new StringBuffer(my_string);
+        answer = sb.reverse().toString();
+        return answer;
+    }
+}
+```
+---
 </pre>
 </details>
 
