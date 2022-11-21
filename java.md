@@ -110,6 +110,27 @@ class Solution {
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/202954702-820d3caf-8a1f-45d5-a20d-5a30b1cbce18.png)
+
+* String타입 x 변수를 선언해줍니다.
+* 반복문을 n번 돌려서 x에 *을 하나씩 추가하고 x를 출력합니다.
+
+```java
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String x = "";
+        for(int i = 0 ; i < n ; i++){
+            x += "*";
+            System.out.println(x);
+        }
+    }
+}
+```
+
 </pre>
 </details>
 
