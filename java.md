@@ -242,6 +242,19 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/203256079-acefb885-87ba-442c-bacb-a2990e523ea2.png)
+
+* answer 배열 첫번째는 money를 5500으로 나눈 값을 넣고 두번째는 5500으로 나눈 나머지의 값을 넣습니다.
+
+```java
+class Solution {
+    public int[] solution(int money) {
+        int[] answer = {money/5500, money%5500};
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
