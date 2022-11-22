@@ -210,6 +210,25 @@ class Solution {
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/203252477-e9462977-b2c3-49e8-a2d6-225873ebbc9e.png)
+
+* 반복문을 i(1)부터 n번까지 돌려 i값이 짝수일 때(i를 2로 나눈 나머지가 0) answer의 값을 i만큼 계속 더해줍니다.
+
+```java
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        for(int i=1;i<=n;i++){
+            if(i%2==0){
+                answer += i;
+            }
+        }
+        return answer;
+    }
+}
+```
+---
+
 
 </pre>
 </details>
