@@ -181,6 +181,29 @@ class Solution {
   <summary> 0 Lv (3)</summary>
 <pre>
 
+![image](https://user-images.githubusercontent.com/105253684/203251037-6c3ed7fd-5ab8-47a3-a200-03acf83e8bdb.png)
+
+* replace(기존 문자, 바꿀 문자)메소드를 활용해 letter에 해당하는 문자에 공백을 넣어줍니다.
+
+```java
+class Solution {
+    public String solution(String my_string, String letter) {
+        String answer = "";
+        answer = my_string.replace(letter, "");
+        return answer;
+    }
+}
+```
+---
+
+
+</pre>
+</details>
+
+<details>
+  <summary> 0 Lv (3)</summary>
+<pre>
+
 
 </pre>
 </details>
