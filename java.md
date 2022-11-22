@@ -195,7 +195,21 @@ class Solution {
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/203251730-d8d05a27-81f8-471b-84cf-8753cb5a265a.png)
 
+* 양꼬치 10인분당 음료가 무료이므로 음료의 개수 k에서 양꼬치 n인분을 10으로 나눈 값을 빼줍니다.
+* n에는 12000을 곱해주고 k에는 2000을 곱해 리턴해줍니다.
+
+```java
+class Solution {
+    public int solution(int n, int k) {
+        k -= n/10;  
+        int answer = 12000 * n + 2000 * k;
+        return answer;
+    }
+}
+```
+---
 
 </pre>
 </details>
