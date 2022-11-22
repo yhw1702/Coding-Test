@@ -228,7 +228,20 @@ class Solution {
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/203254921-8ae5ff0c-116a-4009-9ef9-aaa45535bb50.png)
 
+* Arrays의 copyOfRange(배열, 복사시작인덱스, 복사끝인덱스+1)을 활용해 numbers배열을 원하는 배열로 잘라
+복사하여 answer배열에 넣어줍니다.
+
+```java
+import java.util.Arrays;
+class Solution {
+    public int[] solution(int[] numbers, int num1, int num2) {
+        int[] answer = Arrays.copyOfRange(numbers, num1, num2+1);
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
