@@ -269,7 +269,7 @@ class Solution {
 
 * age를 String으로 변환해 s에 담습니다.
 * split("")으로 문자열을 잘라 arr배열에 넣어줍니다.(23 -> {2,3})
-* 반복문을 arr길이만큼 돌려 parseInt로 변환한 arr[i]에 97을 더해 char타입으로 다시 변환하고 answer에 하나씩 넣어줍니다.
+* 반복문을 arr길이만큼 돌려 parseInt로 변환한 arr[i]에 97을 더해 char타입으로 다시 변환하고(아스키코드로 변환) answer에 하나씩 넣어줍니다.
 (아스키코드 97=a 98=b ....)
 
 ```java
@@ -283,6 +283,39 @@ class Solution {
         }
         
         return answer;
+    }
+}
+```
+---
+![image](https://user-images.githubusercontent.com/105253684/203676047-c4520394-1392-4ed2-8856-e83d597ce0a4.png)
+
+* .clone()메소드를 사용해 emergency의 배열을 복사하여 copy에 넣어줍니다.
+* Arrays의 sort메소드를 활용해 copy메소드를 오름차순 정렬해줍니다.
+* Integer키, 값 map을 선언하고 emergency의 길이를 max변수에 담아줍니다.
+* 반복문을 copy배열 길이만큼 돌려 map(키, 값)에 오름차순정렬된 copy배열에 키에는 오름차순 정렬된 emergency의 값, 
+값은 max부터 하나씩 빼가며 넣어줍니다.
+* 반복문을 돌려 emergency[0]부터 map.get(키)를 사용해 진료순서를 키에 맞는 값으로 하나씩 넣어줍니다.
+
+```java
+import java.util.*;
+class Solution {
+    public int[] solution(int[] emergency) {
+        int[] copy = emergency.clone();
+        Arrays.sort(copy);
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        int max = emergency.length;
+        
+        for(int i = 0 ; i < copy.length ; i++){
+            map.put(copy[i], max);
+            max--;
+        }
+        
+        for(int i = 0 ; i < emergency.length ; i++){
+            emergency[i] = map.get(Integer.valueOf(emergency[i]));
+        }
+        
+        
+        return emergency;
     }
 }
 ```
