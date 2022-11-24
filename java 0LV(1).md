@@ -1,3 +1,5 @@
+# Coding Test
+
 <details>
   <summary> 0 Lv (1)</summary>
 <pre>
@@ -230,7 +232,7 @@ class Solution {
 ---
 ![image](https://user-images.githubusercontent.com/105253684/203254921-8ae5ff0c-116a-4009-9ef9-aaa45535bb50.png)
 
-* Arrays의 copyOfRange(배열, 복사시작인덱스, 복사끝인덱스+1)을 활용해 numbers배열을 원하는 배열로 잘라
+* Arrays의 copyOfRange(배열, 복사시작인덱스, 복사끝인덱스)을 활용해 numbers배열을 원하는 배열로 잘라
 복사하여 answer배열에 넣어줍니다.
 
 ```java
@@ -260,9 +262,30 @@ class Solution {
 </details>
 
 <details>
-  <summary> 0 Lv (3)</summary>
+  <summary> 0 Lv (4)</summary>
 <pre>
 
+![image](https://user-images.githubusercontent.com/105253684/203675153-69fe8551-50ec-4879-b508-267e2e816137.png)
+
+* age를 String으로 변환해 s에 담습니다.
+* split("")으로 문자열을 잘라 arr배열에 넣어줍니다.(23 -> {2,3})
+* 반복문을 arr길이만큼 돌려 parseInt로 변환한 arr[i]에 97을 더해 char타입으로 다시 변환하고 answer에 하나씩 넣어줍니다.
+(아스키코드 97=a 98=b ....)
+
+```java
+class Solution {
+    public String solution(int age) {
+        String answer = "";
+        String s = String.valueOf(age);
+        String[] arr = s.split("");
+        for(int i = 0 ; i < arr.length; i++){
+            answer += ((char)((Integer.parseInt(arr[i]) + 97)));
+        }
+        
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
