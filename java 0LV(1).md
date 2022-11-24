@@ -304,7 +304,7 @@ class Solution {
         Arrays.sort(copy);
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int max = emergency.length;
-        
+
         for(int i = 0 ; i < copy.length ; i++){
             map.put(copy[i], max);
             max--;
@@ -316,6 +316,24 @@ class Solution {
         
         
         return emergency;
+    }
+}
+```
+---
+![image](https://user-images.githubusercontent.com/105253684/203677219-dbb0613d-d204-4839-9cdd-461a72f52a70.png)
+
+* 반복문을 i(1)부터 n까지 돌려 n을 i로 나눈 나머지가 0인 경우에 answer를 1씩 더해줍니다.
+
+```java
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        for(int i = 1 ; i <= n ; i++){
+            if(n%i == 0 ){
+                answer++;    
+            }
+        }
+        return answer;
     }
 }
 ```
