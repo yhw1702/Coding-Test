@@ -337,6 +337,31 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/203677636-6bda4e72-c9c2-447a-950a-5bd46885f494.png)
+
+* 남은 체력을 담을 rhp와 공격횟수를 담을 cnt변수를 선언, 초기화합니다.
+* 먼저 hp를 5로 나눈 값을 cnt에 넣어줍니다.(공격횟수)
+* rhp에 5로 나눈 나머지 값을 넣어줍니다.(공격 후 남은 체력)
+* 다시 rhp에 3을 나눈 값을 cnt에 더해주고, 남은 체력에서 남은체력을 3으로 나눈 나머지를 뺀 후 rhp에서 빼줍니다.
+* 마지막으로 rhp에 1을 나눈값을 cnt에 더해줍니다.
+
+```java
+class Solution {
+    public int solution(int hp) {
+        
+        int rhp = 0;
+        int cnt = 0;
+        
+        cnt = hp / 5;
+        rhp = hp % 5;
+        cnt += rhp / 3;
+        rhp -= rhp-(rhp % 3);
+        cnt += rhp / 1;
+        return cnt;
+    }
+}
+```
 
 </pre>
 </details>
