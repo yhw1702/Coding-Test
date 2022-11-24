@@ -362,6 +362,26 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/203678615-2e5cd29a-6715-47a2-9251-be491e48bdff.png)
+
+* 문자열 rsp를 split("")메소드로 하나씩 arr 배열에 넣어줍니다.
+* 반복문을 arr길이만큼 돌려 arr[i]가 "2"라면 answer에 "0"을, "0"이면 "5", "5"면 "2"를 하나씩 answer에 넣어줍니다.
+
+```java
+class Solution {
+    public String solution(String rsp) {
+        String answer = "";
+        String[] arr = rsp.split("");
+        for(int i = 0 ; i < arr.length ; i++){
+            if(arr[i].equals("2")) answer += "0";
+            else if(arr[i].equals("0")) answer += "5";
+            else if(arr[i].equals("5")) answer += "2";
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
