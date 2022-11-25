@@ -385,3 +385,34 @@ class Solution {
 
 </pre>
 </details>
+
+<details>
+  <summary> 0 Lv (5) </summary>
+<pre>
+
+![image](https://user-images.githubusercontent.com/105253684/203901184-a0fb35e4-9142-403a-ae89-dcbd0b10677d.png)
+
+* dot[0]과 dot[1]을 곱해 양수이면 1, 3 분면이고, 음수이면 2, 4 분면입니다.
+* 조건문을 활용해 양수를 골라 dot[0]이 양수이면 1분면이고, 음수이면 3분면으로 return합니다.
+* 그 반대의 경우는 dot[0]이 양수라면 4분면, 음수라면 2분면을 return 합니다.
+
+```java
+class Solution {
+    public int solution(int[] dot) {
+        int answer = 0;
+        if(dot[0] * dot[1] > 0){
+            if(dot[0] > 0){
+                answer = 1;
+            }else{answer = 3;}
+        }else{
+            if(dot[0] > 0){
+                answer = 4; 
+            }else{answer = 2;}
+        }
+        return answer;
+    }
+}
+```
+
+</pre>
+</details>
