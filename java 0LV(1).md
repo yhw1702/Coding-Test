@@ -413,6 +413,28 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/203901524-0317a051-9a34-414e-aaa7-fe6f4c82290a.png)
+
+* answer배열을[num_list의 길이/n][n]으로 선언합니다.
+* answer배열에 값을 차례로 넣어주기 위해 cnt변수를 선언합니다.
+* 2중 반복문을 활용해 num_list의 길이 나누기 n 번을 n번만큼 돌려 answer에 0번인덱스(cnt)부터 돌려 cnt를 1씩 더해줍니다.
+
+```java
+class Solution {
+    public int[][] solution(int[] num_list, int n) {
+        int[][] answer = new int[num_list.length/n][n];
+        int cnt = 0;
+        for(int i = 0 ; i < num_list.length/n ; i++){
+            for(int j = 0 ; j < n ; j++){
+                answer[i][j] = num_list[cnt];
+                cnt++;
+            }
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
