@@ -456,6 +456,31 @@ class Solution {
     }
 }
 ```
+![image](https://user-images.githubusercontent.com/105253684/206632178-c97358a0-794b-4922-994d-f0e8a1377e89.png)
+
+* direction이 left라면 반복문을 통해 answer배열에 numbers배열을 한칸씩 밀어 넣어주고 마지막엔 numbers 0번 인덱스 값을 넣어줍니다.
+* left가 아니라면 반복문으로 answer배열의 뒤부터 numbers 배열 마지막에서 앞의 인덱스의 값을 넣어주고 
+answer 배열 0번 인덱스에 numbers마지막 인덱스 값을 넣어줍니다.
+
+```java
+class Solution {
+    public int[] solution(int[] numbers, String direction) {
+        int[] answer = new int[numbers.length];
+        if(direction.equals("left")){
+            for(int i = 0 ; i < numbers.length-1 ; i++){
+                answer[i] = numbers[i+1];
+            }
+            answer[numbers.length-1] = numbers[0];
+        }else{
+            for(int i = numbers.length-1 ; i > 0 ; i--){
+                answer[i] = numbers[i-1];
+            }
+            answer[0] = numbers[numbers.length-1];
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
