@@ -438,3 +438,24 @@ class Solution {
 
 </pre>
 </details>
+
+<details>
+  <summary> 0 Lv (6) </summary>
+<pre>
+
+![image](https://user-images.githubusercontent.com/105253684/206631785-685fb506-e6dd-4f55-ace8-ec3c976f645a.png)
+
+* 공을 던지고 받은 사람이 아닌 공을 던전 사람의 번호를 구해야 하기 때문에 k에 1을 빼줍니다.
+* 한 명을 건너뛰므로 * 2 를 해주고 numbers의 길이만큼 나눈 나머지를 구해줍니다.
+
+```java
+class Solution {
+    public int solution(int[] numbers, int k) {
+        int answer = numbers[(k-1) * 2 % numbers.length];
+        return answer;
+    }
+}
+```
+
+</pre>
+</details>
