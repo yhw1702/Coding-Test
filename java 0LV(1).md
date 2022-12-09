@@ -481,6 +481,19 @@ class Solution {
     }
 }
 ```
+![image](https://user-images.githubusercontent.com/105253684/206632638-72459f52-870f-4805-9cee-1f73517e6ca6.png)
+
+* 주사위의 최대 개수를 구하기 위해 가로, 새로, 높이에 각각 n을 나눠준 값을 곱해주면됩니다.
+
+```java
+class Solution {
+    public int solution(int[] box, int n) {
+        int answer = 0;
+        answer = (box[0]/n) * (box[1]/n) * (box[2]/n);
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
