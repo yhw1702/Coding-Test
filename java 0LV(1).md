@@ -538,7 +538,7 @@ class Solution {
 ```
 ---
 ![image](https://user-images.githubusercontent.com/105253684/206976781-8633e5c1-8b8f-4843-ba7f-bef046fdf26c.png)
-* 반목분을 i=0부터 my_string의 길이미만으로 돌려 a변수에 한번씩 담습니다.
+* 반목분을 i=0부터 my_string의 길이미만으로 돌려 a변수에 my_string.substirng(시작인덱스,끝인덱스)을 이용해 하나씩 담습니다.
 * a변수가 모음이 아닌경우만 조건문으로 answer에 더해줍니다.
 ```java
 class Solution {
