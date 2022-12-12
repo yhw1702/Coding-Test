@@ -518,6 +518,25 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/206976115-575bbfd6-4934-4310-8907-ecd601171153.png)
+* a변수를 선언 후 1로 초기화해줍니다.
+* 제한사항의 n은 최대 3,628,800로 10의 팩토리얼이므로 반복문을 i가 1부터 10까지 돌려 a변수에 하나씩 곱해 넣어줍니다.
+* a가 n보다 커진다면 i-1을 리턴하고 아니라면 10을 리턴해줍니다.
+```java
+class Solution {
+    public int solution(int n) {
+        int answer = 1;
+        int a = 1;
+        for(int i = 1 ; i <= 10 ; i++){
+            a *= i;
+            if(a > n) return i-1;
+        }
+        return 10;
+    }
+}
+```
+
 
 </pre>
 </details>
