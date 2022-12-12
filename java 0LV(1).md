@@ -536,7 +536,24 @@ class Solution {
     }
 }
 ```
-
+---
+![image](https://user-images.githubusercontent.com/105253684/206976781-8633e5c1-8b8f-4843-ba7f-bef046fdf26c.png)
+* 반목분을 i=0부터 my_string의 길이미만으로 돌려 a변수에 한번씩 담습니다.
+* a변수가 모음이 아닌경우만 조건문으로 answer에 더해줍니다.
+```java
+class Solution {
+    public String solution(String my_string) {
+        String answer = "";
+        for(int i=0; i<my_string.length();i++){
+            String a = my_string.substring(i, i+1);
+            if(!(a.equals("a") || a.equals("e") || a.equals("i") || a.equals("o") || a.equals("u"))){
+                answer += a;
+            }
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
