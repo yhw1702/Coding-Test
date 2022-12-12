@@ -497,3 +497,27 @@ class Solution {
 
 </pre>
 </details>
+
+<details>
+  <summary> 0 Lv (7) </summary>
+<pre>
+
+![image](https://user-images.githubusercontent.com/105253684/206975790-ac34d36f-96ef-43da-9022-8a9b09d39719.png)
+
+* Arrays.sort를 활용해 numbers의 배열을 오름차순 정렬해줍니다.
+* numbers배열의 마지막 인덱스의 값과 그 전 인덱스의 값을 곱해줍니다.
+
+```java
+import java.util.*;
+class Solution {
+    public int solution(int[] numbers) {
+        int answer = 0;
+        Arrays.sort(numbers);
+        answer = numbers[numbers.length-1] * numbers[numbers.length-2];
+        return answer;
+    }
+}
+```
+
+</pre>
+</details>
