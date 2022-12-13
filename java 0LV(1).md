@@ -503,10 +503,8 @@ class Solution {
 <pre>
 
 ![image](https://user-images.githubusercontent.com/105253684/206975790-ac34d36f-96ef-43da-9022-8a9b09d39719.png)
-
 * Arrays.sort를 활용해 numbers의 배열을 오름차순 정렬해줍니다.
 * numbers배열의 마지막 인덱스의 값과 그 전 인덱스의 값을 곱해줍니다.
-
 ```java
 import java.util.*;
 class Solution {
@@ -554,6 +552,48 @@ class Solution {
     }
 }
 ```
+
+</pre>
+</details>
+
+
+<details>
+  <summary> 0 Lv (8) </summary>
+<pre>
+
+![image](https://user-images.githubusercontent.com/105253684/207226723-f9f3f642-0a13-47c5-b4e1-4ff7df6a4c06.png)
+* my_string에 글자를 하나하나 s배열에 .split("")메소드를 활용해 넣어줍니다.
+* ArrayList<string> l을 선언해줍니다.
+* 반복문을 s배열 길이 미만으로 돌려(인덱스) s배열에 포함된 숫자만 l 리스트에 넣어줍니다.
+* Collection.sort(l)을 이용해 string 리스트를 오름차순 정렬해줍니다.
+* 반복문을 l길이 미만으로 돌려서 answer배열에 Integer.parseInt로 string을 int로 형변환하여 하나씩 넣어줍니다.
+```java
+import java.util.*;
+class Solution {
+    public int[] solution(String my_string) {
+        List<String> l = new ArrayList<>();
+        String[] s = my_string.split("");
+        for(int i = 0 ; i < s.length ; i++){
+            if(s[i].equals("0") || s[i].equals("1") || s[i].equals("2") || s[i].equals("3") || 
+              s[i].equals("4") || s[i].equals("5") || s[i].equals("6") || s[i].equals("7") || 
+              s[i].equals("8") || s[i].equals("9")) l.add(s[i]);            
+        }
+        Collections.sort(l);
+        int[] answer = new int[l.size()];
+        for(int i = 0 ; i < l.size() ; i++){
+            answer[i] = Integer.parseInt(l.get(i));            
+        }
+        return answer;
+    }
+}
+```
+
+</pre>
+</details>
+
+<details>
+  <summary> 0 Lv (9) </summary>
+<pre>
 
 </pre>
 </details>
