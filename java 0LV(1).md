@@ -587,6 +587,31 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/207227330-120ec77c-37de-4c40-b26d-6b3e172f7a80.png)
+* ArrayList<string> l을 선언해줍니다.
+* 배열 s에 my_string의 문자를 하나하나 split을 활용하여 넣어줍니다.
+* 반복문을 돌려 배열 s에 포함된 숫자만 l 리스트에 하나씩 넣어줍니다.
+* 반복문을 l의 길이 미만으로 돌려 l에 들어있는 숫자를 int로 형변환하여 answer에 하나씩 더해줍니다.
+```java
+import java.util.*;
+class Solution {
+    public int solution(String my_string) {
+        int answer = 0;
+        List<String> l = new ArrayList<>();
+        String[] s = my_string.split("");
+        for(int i = 0 ; i < s.length ; i++){
+            if(s[i].equals("0") || s[i].equals("1") || s[i].equals("2") || s[i].equals("3") || 
+              s[i].equals("4") || s[i].equals("5") || s[i].equals("6") || s[i].equals("7") || 
+              s[i].equals("8") || s[i].equals("9")) l.add(s[i]);            
+        }
+        for(int i = 0 ; i < l.size() ; i++){
+            answer += Integer.parseInt(l.get(i));
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
