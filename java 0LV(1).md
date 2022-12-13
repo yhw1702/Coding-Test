@@ -612,6 +612,24 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/207227915-78ef2301-9562-439c-97d5-1fb50939bbf4.png)
+* 문자열 s를 .split(" ")을 활용해 공백으로 구분하여 하나씩 String 배열 srr에 넣어줍니다.
+* 반복문을 i = 0 부터 srr길이 미만으로 돌려 srr[i]가 Z가 아니라면 answer에 srr[i]를 int로 형변환하여 계속 더해주고
+Z 라면 그 전 인덱스인 srr[i-1]를 answer에서 빼줍니다.
+```java
+class Solution {
+    public int solution(String s) {
+        int answer = 0;
+        String[] srr = s.split(" ");
+        for(int i = 0 ; i < srr.length ; i++){
+            if(!srr[i].equals("Z")) answer += Integer.parseInt(srr[i]);
+            else answer -= Integer.parseInt(srr[i-1]);
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
