@@ -135,7 +135,7 @@ public class Solution {
 ---
 ![image](https://user-images.githubusercontent.com/105253684/202955166-94848ddb-a074-48a0-becc-baa2a2fd4963.png)
 
-* 짝수와 홀수의 갯수를 담을 cnt1, cnt2 변수를 선언해줍니다.
+* 짝수와 홀수의 개수를 담을 cnt1, cnt2 변수를 선언해줍니다.
 * 반복문을 돌려 num_list[i]가 짝수일 경우(2로 나눈 나머지가 0) cnt1 1씩 증가,
 홀수일 경우(else) cnt2 2씩 증가하여 answer배열에 넣어줍니다.
 
@@ -270,7 +270,7 @@ class Solution {
 * age를 String으로 변환해 s에 담습니다.
 * split("")으로 문자열을 잘라 arr배열에 넣어줍니다.(23 -> {2,3})
 * 반복문을 arr길이만큼 돌려 parseInt로 변환한 arr[i]에 97을 더해 char타입으로 다시 변환하고(아스키코드로 변환) answer에 하나씩 넣어줍니다.
-(아스키코드 97=a 98=b ....)
+(아스키코드 97=a 98=b ...)
 
 ```java
 class Solution {
@@ -290,7 +290,7 @@ class Solution {
 ![image](https://user-images.githubusercontent.com/105253684/203676047-c4520394-1392-4ed2-8856-e83d597ce0a4.png)
 
 * .clone()메소드를 사용해 emergency의 배열을 복사하여 copy에 넣어줍니다.
-* Arrays의 sort메소드를 활용해 copy메소드를 오름차순 정렬해줍니다.
+* Arrays의 sort메소드를 활용해 copy배열을 오름차순 정렬해줍니다.
 * Integer키, 값 map을 선언하고 emergency의 길이를 max변수에 담아줍니다.
 * 반복문을 copy배열 길이만큼 돌려 map(키, 값)에 오름차순정렬된 copy배열에 키에는 오름차순 정렬된 emergency의 값, 
 값은 max부터 하나씩 빼가며 넣어줍니다.
@@ -445,7 +445,7 @@ class Solution {
 
 ![image](https://user-images.githubusercontent.com/105253684/206631785-685fb506-e6dd-4f55-ace8-ec3c976f645a.png)
 
-* 공을 던지고 받은 사람이 아닌 공을 던전 사람의 번호를 구해야 하기 때문에 k에 1을 빼줍니다.
+* 공을 던지고 받은 사람이 아닌 공을 던진사람의 번호를 구해야 하기 때문에 k에 1을 빼줍니다.
 * 한 명을 건너뛰므로 * 2 를 해주고 numbers의 길이만큼 나눈 나머지를 구해줍니다.
 
 ```java
@@ -637,6 +637,31 @@ class Solution {
 <details>
   <summary> 0 Lv (9) </summary>
 <pre>
+
+![image](https://user-images.githubusercontent.com/105253684/207514241-accbcf7c-9847-4da7-9c3c-4db44db784ee.png)
+* answer배열의 크기를 strlist의 길이만큼 선언해줍니다.
+* 반복문을 strlist배열의 길이 미만으로 돌려 answer배열에 strlist[i]의 길이를 하나씩 넣어줍니다.
+```java
+class Solution {
+    public int[] solution(String[] strlist) {
+        int[] answer = new int[strlist.length];
+        for(int i = 0 ; i < strlist.length ; i++){
+            answer[i] = strlist[i].length();
+        }
+        return answer;
+    }
+}
+```
+---
+
+</pre>
+</details>
+
+<details>
+  <summary> 0 Lv (10) </summary>
+<pre>
+
+
 
 </pre>
 </details>
