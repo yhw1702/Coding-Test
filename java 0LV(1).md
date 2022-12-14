@@ -653,6 +653,33 @@ class Solution {
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/207514555-93ed4d0f-8c7e-4ab0-a5c7-d1761092006c.png)
+* x변수에 배열 첫 번째 x좌표를 넣어줍니다.
+* y변수에 배열 첫 번째 y좌료를 넣어줍니다.
+* 가로와 세로의 길이를 담을 변수를 선언, 초기화해줍니다.
+* 반복문을 dots배열 행의 길이만큼 돌리고 조건문으로 x가 다른 좌표의 x값과 다르면 Math.abs()를 활용해
+ x변수의 다른 x좌표를 빼준 값의 절대값을 구해줍니다(가로).
+* 마찬가지로 y의 절대값을 구해줍니다.(높이)
+* 가로와 세로를 곱해줍니다.
+```java
+class Solution {
+    public int solution(int[][] dots) {
+        int x = dots[0][0];
+        int y = dots[0][1];
+        int width = 0;
+        int height = 0;
+        for(int i = 0 ; i < dots.length ; i++){
+            if(x != dots[i][0]){
+                width = Math.abs(x - dots[i][0]);
+            }
+            if(y != dots[i][1]){
+                height = Math.abs(y - dots[i][1]);
+            }
+        }
+        return width * height;
+    }
+}
+```
 
 </pre>
 </details>
