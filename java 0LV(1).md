@@ -680,6 +680,37 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/207515561-73920cbf-d23b-41d7-b127-6a06b9102bc5.png)
+* x 변수에 board[0](맵의 가로 크기)를 2로 나눈 값(0, 0 기준)을 넣어줍니다.
+* y 변수에 맵의 새로 크기를 2로 나눈 값을 넣어줍니다.
+* 반복문을 keyinput배열 길이미만으로 돌려 keyinput[i]가 left 라면 answer[0](캐릭터의 현재 x좌표)가 -x와 같지 않을 때만 -1을 해줍니다.
+* right는 캐릭터의 현재 x좌표가 x와 같지 않을 때만 +1을 해줍니다.
+* up과 down은 각각 y, -y 와 같지 않을 때만 answer[1](케릭터의 현재 y좌표)에 +1, -1을 해줍니다.
+```java
+class Solution {
+    public int[] solution(String[] keyinput, int[] board) {
+        int[] answer = {0, 0};
+        int x = board[0]/2;
+        int y = board[1]/2;
+        for(int i = 0 ; i < keyinput.length ; i++){
+            if(keyinput[i].equals("left")){
+                if(answer[0] != -x) answer[0] -= 1;
+            }
+            if(keyinput[i].equals("right")){
+                if(answer[0] != x) answer[0] += 1;
+            }
+            if(keyinput[i].equals("up")){
+                if(answer[1] != y) answer[1] += 1;
+            }
+            if(keyinput[i].equals("down")){
+                if(answer[1] != -y) answer[1] -= 1;
+            }
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
