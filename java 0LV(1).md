@@ -736,6 +736,30 @@ class Solution {
     }
 }
 ```
+![image](https://user-images.githubusercontent.com/105253684/207784088-81e841af-ade1-4827-8908-8fc4e423e65d.png)
+* 정수 x와 n변수를 선언, 초기화 해줍니다.
+* String배열 srr에 문자열 polynomial " + "를 기준으로 잘라 넣어줍니다.
+* 반복문을 돌려 srr[i]가 x를 포함하고 길이가 1이라면(x) 1을, 아니라면 srr[i]에 x를 뺀 값을 정수형으로 변환하여 x에 더해줍니다.
+* x를 포함하지 않는다면(정수) n에 srr[i]를 형변환하여 더해줍니다.
+* ?연산자를 활용해 answer에 x가 0이면 공백, 0이면 x, 0보다 크면 x + "x" 그리고 정수자리에는 x가 0이면 n x와 n이 0이면 공백,
+x가 0이 아니면 앞에 "+" + n을 해줍니다.
+
+```java
+class Solution {
+    public String solution(String polynomial) {
+        String answer = "";
+        int x = 0;
+        int n = 0;
+        String[] srr = polynomial.split(" \\+ ");
+        for(int i = 0 ; i < srr.length ; i++){
+            if(srr[i].contains("x")){
+                x += srr[i].length() == 1 ? 1 : Integer.parseInt(srr[i].replace("x",""));
+            }else n += Integer.parseInt(srr[i]);
+        }
+        return (x != 0 ? x > 1 ? x + "x" : "x" : "") + (n != 0 ? (x != 0 ? " + " : "") + n : x == 0 ? "0" : "");
+    }
+}
+```
 
 </pre>
 </details>
