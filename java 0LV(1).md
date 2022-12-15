@@ -682,8 +682,8 @@ class Solution {
 ```
 ---
 ![image](https://user-images.githubusercontent.com/105253684/207515561-73920cbf-d23b-41d7-b127-6a06b9102bc5.png)
-* x 변수에 board[0](맵의 가로 크기)를 2로 나눈 값(0, 0 기준)을 넣어줍니다.
-* y 변수에 맵의 새로 크기를 2로 나눈 값을 넣어줍니다.
+* x 변수에 board[0](맵의 가로 크기)를 2로 나눈 값(0, 0 기준 현재 맵의 가로 최대, 최소길이)을 넣어줍니다.
+* y 변수에 맵의 새로 크기를 2로 나눈 값(0, 0 기준 현재 맵의 세로 최대, 최소길이)을 넣어줍니다.
 * 반복문을 keyinput배열 길이미만으로 돌려 keyinput[i]가 left 라면 answer[0](캐릭터의 현재 x좌표)가 -x와 같지 않을 때만 -1을 해줍니다.
 * right는 캐릭터의 현재 x좌표가 x와 같지 않을 때만 +1을 해줍니다.
 * up과 down은 각각 y, -y 와 같지 않을 때만 answer[1](케릭터의 현재 y좌표)에 +1, -1을 해줍니다.
@@ -719,7 +719,23 @@ class Solution {
   <summary> 0 Lv (10) </summary>
 <pre>
 
-
+![image](https://user-images.githubusercontent.com/105253684/207783222-35e32229-7f8f-4207-ba90-5da4531f0513.png)
+* Arrays.sort로 numbers배열을 오름차순 정렬해 줍니다.
+* 변수 x에는 가장 작은 수 두 개의 곱을 넣어주고 y에는 가장 큰 수 두 개의 곱을 넣어줍니다.
+* Math.max(비교할 수1, 비교할 수2)를 사용해 둘중 큰 수를  answer에 넣어줍니다.
+```java
+import java.util.Arrays;
+class Solution {
+    public int solution(int[] numbers) {
+        int answer = 0;
+        Arrays.sort(numbers);
+        int x = numbers[0] * numbers[1];
+        int y = numbers[numbers.length-1] * numbers[numbers.length-2];
+        answer = Math.max(x, y);
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
