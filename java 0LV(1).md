@@ -736,6 +736,7 @@ class Solution {
     }
 }
 ```
+---
 ![image](https://user-images.githubusercontent.com/105253684/207784088-81e841af-ade1-4827-8908-8fc4e423e65d.png)
 * 정수 x와 n변수를 선언, 초기화 해줍니다.
 * String배열 srr에 문자열 polynomial " + "를 기준으로 잘라 넣어줍니다.
