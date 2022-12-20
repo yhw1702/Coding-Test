@@ -761,6 +761,23 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/208594971-0f686af8-fda7-4661-81f9-2289ccec373a.png)
+* String배열 srr에 my_string에서 replaceAll(변환하고싶은 값, 변환할 값)으로 정규식을 이용해 a~z,A~Z를 공백으로 변환합니다.
+* 반복문을 돌려 srr[i]가 공백이 아닌 경우(숫자) int로 형변환하여 answer에 하나씩 더해줍니다.
+```java
+class Solution {
+    public int solution(String my_string) {
+        int answer = 0;
+        String[] srr = my_string.replaceAll("[a-zA-Z]" , " ").split(" ");
+        for(int i = 0 ; i < srr.length ; i++){
+            if(!srr[i].equals("")) answer += Integer.valueOf(srr[i]);
+        }
+        return answer;
+    }
+}
+```
+
 
 </pre>
 </details>
