@@ -777,7 +777,24 @@ class Solution {
     }
 }
 ```
-
+---
+![image](https://user-images.githubusercontent.com/105253684/208595615-4d4f52a5-a8dd-44b9-a1b9-770084dc2f4d.png)
+* 먼저 sides배열을 오름차순 정렬해줍니다.(Arrays.sort(sides))
+* sides배열의[1] (큰값) 에서 sides[0] (작은값) 을 빼줬을때 1이면 큰 값과 작은 값을 더하고 2를 빼주고 2이면 3을 3이면 4를 빼주면 정답입니다.
+* 반복문을 돌려 sides[1]에서 sides[0]을 뺐을 때 i라면 둘을 더한값의 -i-1을 해줍니다.
+```java
+import java.util.*;
+class Solution {
+    public int solution(int[] sides) {
+        int answer = 0;
+        Arrays.sort(sides);
+        for(int i = 0 ; i < 1000 ; i++){
+            if(sides[1] - sides[0] == i) answer = sides[0] + sides[1] - i - 1;
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
