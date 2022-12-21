@@ -19,7 +19,27 @@ class Solution {
     }
 }
 ```
-
+---
+![image](https://user-images.githubusercontent.com/105253684/208825408-2734b951-c207-4c16-8c8e-2229b4d92037.png)
+* 반복문을 dic길이만큼 돌리고 cnt변수를 선언, 초기화해줍니다.
+* 중첩으로 반복문을 돌려 dic[i]에 spell[j]가 포함되어있다면 cnt를 1증가(같은 단어 개수)하고 
+cnt가 spell의 길이와 같다면(같은 단어와 spell의 길이) 1을 리턴해줍니다.
+* 아니라면 2를 리턴합니다.
+```java
+class Solution {
+    public int solution(String[] spell, String[] dic) {
+        for(int i =0; i<dic.length; i++){
+            int cnt =0;
+            for(int j=0; j<spell.length; j++){
+                if(dic[i].contains(spell[j])) cnt++;
+                if(cnt==spell.length) return 1;
+            }
+        }
+        return 2;
+    }
+}
+```
+---
 
 </pre>
 </details>
