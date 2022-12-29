@@ -66,6 +66,38 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/209906746-b84a312d-df8c-49aa-8de7-f63d17c36b14.png)
+* float배열(평균점수) arr, arr2를 score.length만큼 선언해줍니다.
+* <평균, 등수>를 담을 HashMap m 을 선언해줍니다.
+* 반복문을 돌려 각 점수의 평균을 arr과 arr2에 담아줍니다.
+* arr배열을 오름차순 정렬해줍니다.
+* 반복문으로 Map m에(오름차순 정렬된 평균점수, 등수)를 담아줍니다.
+* 반복문을 i = 0 부터 score.length만큼 돌려 answer[i]에 m.get(키)를 활용해 arr2배열에 담긴 평균점수를 등수로 바꿔 넣어줍니다.
+```java
+import java.util.*;
+class Solution {
+    public int[] solution(int[][] score) {
+        int[] answer = new int[score.length];
+        float[] arr = new float[score.length];
+        float[] arr2 = new float[score.length];
+        Map<Float, Integer> m = new HashMap<>();
+        for(int i = 0 ; i < score.length ; i++){
+            arr[i] = (float)(score[i][0]+score[i][1]) / 2;
+            arr2[i] = (float)(score[i][0]+score[i][1]) / 2;
+        }
+        Arrays.sort(arr);
+        for(int i = 0, j = score.length ; i < score.length ; i++){
+            m.put(arr[i], j);
+            j--;
+        }
+        for(int i = 0 ; i < score.length ; i++){
+            answer[i] = m.get(arr2[i]);
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
