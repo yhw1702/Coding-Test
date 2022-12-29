@@ -98,6 +98,23 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/209907438-cac33c0a-b572-4168-b97c-c818dfe535c0.png)
+* 반복문을 i = 0 부터 db의 길이만큼 돌려 db[i][0](db에 있는 아이디)가 id_pw[1](아이디)와 일치하고, 비밀번호가 일치하지 
+않으면 "wrong pw"를 일치하면 "login" 아이디와 비밀번호가 모두 일치하지 않다면 "fail"을 리턴합니다.
+```java
+class Solution {
+    public String solution(String[] id_pw, String[][] db) {
+        for(int i = 0 ; i < db.length ; i++){
+            if(db[i][0].equals(id_pw[0])){
+                if(!db[i][1].equals(id_pw[1])) return "wrong pw";
+                else return "login";
+            }
+        }
+        return "fail";
+    }
+}
+```
 
 </pre>
 </details>
