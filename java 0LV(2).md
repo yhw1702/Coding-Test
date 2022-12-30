@@ -138,6 +138,34 @@ class Solution {
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/210039677-8684d8e3-9658-4326-b92f-f62d81385797.png)
+* String 배열 arr1, arr2에 각각 before와 after를 split("")으로 잘라서 하나씩 넣어줍니다.
+* Map1, Map2를 선언해줍니다.
+* 반복문을 before의 길이만큼 돌려 map1 키에는 arr1(before)[i] 값에는 1을 넣어주고 키가 존재한다면 값에 +1을 해줍니다.
+* after도 map2에 담아줍니다.
+* map1과 map2가 같다면 return 1; 아니면 0을 리턴합니다.
+```java
+import java.util.*;
+
+class Solution {
+    public int solution(String before, String after) {
+        int answer = 0;
+        String[] arr1 = before.split("");
+        String[] arr2 = after.split("");
+        Map<String, Integer> map1 = new HashMap<>();
+        Map<String, Integer> map2 = new HashMap<>();
+        for(int i =0; i<before.length(); i++){
+            if(!map1.containsKey(arr1[i])) map1.put(arr1[i], 1);
+            else map1.put(arr1[i], map1.get(arr1[i]) +1);
+            if(!map2.containsKey(arr2[i])) map2.put(arr2[i], 1);
+            else map2.put(arr2[i], map2.get(arr2[i]) +1);
+        }
+        if(map1.equals(map2)) return 1;  
+        return 0;
+    }
+}
+```
+---
 
 </pre>
 </details>
