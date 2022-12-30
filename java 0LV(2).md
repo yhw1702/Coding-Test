@@ -123,5 +123,28 @@ class Solution {
   <summary> 0 Lv (2) </summary>
 <pre>
 
+![image](https://user-images.githubusercontent.com/105253684/210039269-3fcbba80-1e33-4436-8489-2b1e47f1d8e4.png)
+* 변수 x와 y에 Integer.parseInt()를 활용해 2진수(String)를 10진수(int)로 바꿔 넣어줍니다.
+* answer에 x+y값을 Integer.toBinaryString()을 활용해 10진수(int)를 2진수(String)으로 바꿔 넣어줍니다.
+```java
+class Solution {
+    public String solution(String bin1, String bin2) {
+        String answer = "";
+        int x = Integer.parseInt(bin1, 2);
+        int y = Integer.parseInt(bin2, 2);
+        answer = Integer.toBinaryString(x+y);
+        return answer;
+    }
+}
+```
+---
+
+</pre>
+</details>
+
+<details>
+  <summary> 0 Lv (3) </summary>
+<pre>
+
 </pre>
 </details>
