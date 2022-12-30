@@ -166,6 +166,27 @@ class Solution {
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/210039974-78f71a72-0f77-4fef-a877-a04cdf95583f.png)
+* 문자열 s에 int i부터 j값을 반복문으로 공백없이 담아줍니다.
+* 문자열 s를 split("")으로 하나씩 잘라 srr배열에 담아줍니다.
+* 반복문을 x = 0부터 srr길이만큼 돌려 srr[x]에 k를 toString으로 형변환한 값과 같다면 answer++해줍니다.
+```java
+class Solution {
+    public int solution(int i, int j, int k) {
+        int answer = 0;
+        String s = "";
+        for(int x = i ; x <=j ; x++){
+            s += x;
+        }
+        String[] srr = s.split("");
+        for(int x = 0 ; x < srr.length ; x++){
+            if(srr[x].equals(Integer.toString(k))) answer++;
+        }
+        return answer;
+    }
+}
+```
+---
 
 </pre>
 </details>
