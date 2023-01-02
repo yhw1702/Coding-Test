@@ -201,6 +201,22 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/210208700-0fe2e1b2-9f54-495d-8a3c-59a38c816e07.png)
+* 변수 answer에 1을 넣어줍니다.
+* 가장 긴 변의 길이가 다른 두 변의 길이의 합보다 작아야 하므로 sides배열을 Arrays.sort로 오름차순 정렬해줍니다.
+* if문을 활용해 sides[2](가장 긴 변)가 sides[0]과 sides[1]의 합보다 크거나 같다면 answer에 2를(삼각형x) 넣어줍니다.
+```java
+import java.util.*;
+class Solution {
+    public int solution(int[] sides) {
+        int answer = 1;
+        Arrays.sort(sides);
+        if(sides[2] >= sides[0] + sides[1]) answer = 2;
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
