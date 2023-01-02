@@ -124,7 +124,7 @@ class Solution {
 <pre>
 
 ![image](https://user-images.githubusercontent.com/105253684/210039269-3fcbba80-1e33-4436-8489-2b1e47f1d8e4.png)
-* 변수 x와 y에 Integer.parseInt()를 활용해 2진수(String)를 10진수(int)로 바꿔 넣어줍니다.
+* 변수 x와 y에 Integer.parseInt(2진수(String), 2(int))를 활용해 2진수를 10진수로 바꿔 넣어줍니다.
 * answer에 x+y값을 Integer.toBinaryString()을 활용해 10진수(int)를 2진수(String)으로 바꿔 넣어줍니다.
 ```java
 class Solution {
@@ -142,8 +142,8 @@ class Solution {
 * String 배열 arr1, arr2에 각각 before와 after를 split("")으로 잘라서 하나씩 넣어줍니다.
 * Map1, Map2를 선언해줍니다.
 * 반복문을 before의 길이만큼 돌려 map1 키에는 arr1(before)[i] 값에는 1을 넣어주고 키가 존재한다면 값에 +1을 해줍니다.
-* after도 map2에 담아줍니다.
-* map1과 map2가 같다면 return 1; 아니면 0을 리턴합니다.
+* after도 같은 방식으로 map2에 담아줍니다.
+* map1과 map2가 같다면(map1.equals(map2)) return 1; 아니면 0을 리턴합니다.
 ```java
 import java.util.*;
 
@@ -187,6 +187,20 @@ class Solution {
 }
 ```
 ---
+![image](https://user-images.githubusercontent.com/105253684/210208327-3fa86049-cdf9-4363-a2b9-e2c98635ab22.png)
+* 반복문을 my_string 길이미만으로 돌려 indexOf를 활용해 my_string.charAt(i)의 인덱스 값(앞에서부터 처음 발견되는 인덱스)이 i와 같다면(중복x)
+answer에 my_string의 i번째 인덱스 값을 넣어줍니다.
+```java
+class Solution {
+    public String solution(String my_string) {
+        String answer = "";
+        for(int i = 0 ; i < my_string.length() ; i++){
+            if(my_string.indexOf(my_string.charAt(i)) == i) answer += my_string.charAt(i);
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
