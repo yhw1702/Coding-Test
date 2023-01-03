@@ -217,6 +217,29 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/210333399-4e2f7e06-3886-4348-930d-f0fad224b1d2.png)
+* arr배열에서 n을 뺀 절댓값을 담을 min변수를 100으로 초기화합니다.
+* arr배열을 오름차순 정렬합니다. 
+* 반복문을 돌려 정수배열값 - n의 절댓값(n과 가장 가까운 수)을 abs에 담고 가장 작은값의 배열 값을 answer에 넣어줍니다.
+```java
+import java.util.*;
+class Solution {
+    public int solution(int[] arr, int n) {
+        int answer = 0;
+        int min = 100;
+        Arrays.sort(arr);
+        for(int i = 0 ; i<arr.length; i++){
+            int abs = Math.abs(arr[i] - n);
+            if(abs < min){
+                min = abs;
+                answer = arr[i];
+            }
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
