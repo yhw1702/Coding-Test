@@ -242,15 +242,14 @@ class Solution {
 ```
 ![image](https://user-images.githubusercontent.com/105253684/210334087-78abdb9f-2155-4dee-b628-0f93700df0ae.png)
 * 정수 order를 하나씩 자르기 위해 문자열 s에 String 형변환한 order를 넣어줍니다.
-* 반복문을 돌려 s의 i번째 인덱스 값이 3, 6, 9중 하나라면 answer++해줍니다.
+* 반복문을 돌려 charAt()으로 s의 i번째 인덱스 값이 3, 6, 9중 하나라면 answer++해줍니다.
 ```java
 class Solution {
     public int solution(int order) {
         int answer = 0;
         String s = Integer.toString(order);
         for(int i = 0 ; i < s.length() ; i++){
-            if(s.substring(i, i+1).equals("3") || s.substring(i, i+1).equals("6") ||
-               s.substring(i, i+1).equals("9")) answer++;
+            if(s.charAt(i) == '3' || s.charAt(i) == '6' || s.charAt(i) == '9') answer++;
         }
         return answer;
     }
