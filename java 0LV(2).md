@@ -268,6 +268,28 @@ class Solution {
     }
 }
 ```
+---
+![image](https://user-images.githubusercontent.com/105253684/210755952-e1bc6648-a249-4ea2-9d53-2a01b19b85d3.png)
+* .replace()로 zero부터 nine까지 각각 0부터 9로 바꿔 numbers에 담아주고 Long으로 형변환하여 answer에 담아줍니다.
+```java
+class Solution {
+    public long solution(String numbers) {
+        long answer = 0;
+        numbers = numbers.replace("zero","0");
+        numbers = numbers.replace("one","1");
+        numbers = numbers.replace("two","2");
+        numbers = numbers.replace("three","3");
+        numbers = numbers.replace("four","4");
+        numbers = numbers.replace("five","5");
+        numbers = numbers.replace("six","6");
+        numbers = numbers.replace("seven","7");
+        numbers = numbers.replace("eight","8");
+        numbers = numbers.replace("nine","9");
+        answer = Long.parseLong(numbers);
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
