@@ -255,7 +255,19 @@ class Solution {
     }
 }
 ```
-
+![image](https://user-images.githubusercontent.com/105253684/210754704-55f75375-57a9-4143-babb-23661772c182.png)
+* 반복문을 i = 1부터 cipher길이만큼 돌려 i가 code에 나누어 떨어지면(code의 배수) cipher의 i - 1인덱스 값을 answer에 더해줍니다.
+```java
+class Solution {
+    public String solution(String cipher, int code) {
+        String answer = "";
+        for(int i = 1 ; i <= cipher.length() ; i++){
+            if(i % code == 0) answer += cipher.charAt(i - 1);
+        }
+        return answer;
+    }
+}
+```
 
 </pre>
 </details>
@@ -263,6 +275,8 @@ class Solution {
 <details>
   <summary> 0 Lv (3) </summary>
 <pre>
+
+
 
 </pre>
 </details>
